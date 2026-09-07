@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSafe - Quiz Result</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header>
+
+    <h1>CyberSafe - Quiz Result</h1>
+
+</header>
+
+
+
+<!-- ========================= -->
+<!-- RESULT CARD -->
+<!-- ========================= -->
+
+<div class="result-box">
+
+
+    <!-- Trophy -->
+
+    <div class="result-icon">
+        🏆
+    </div>
+
+
+    <!-- Heading -->
+
+    <h2>
+        Quiz Completed!
+    </h2>
+
+
+    <p class="result-message">
+        Great job completing the Cyber Safety Quiz!
+    </p>
+
+
+
+    <!-- ========================= -->
+    <!-- SCORE -->
+    <!-- ========================= -->
+
+    <div class="score-card">
+
+        <p class="score-title">
+            YOUR SCORE
+        </p>
+
+        <h3 id="score">
+        </h3>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- LEVEL -->
+    <!-- ========================= -->
+
+    <div id="level" class="result-level">
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- FEEDBACK -->
+    <!-- ========================= -->
+
+    <p id="feedback" class="feedback">
+    </p>
+
+
+
+    <!-- ========================= -->
+    <!-- NAVIGATION -->
+    <!-- ========================= -->
+
+    <div class="result-buttons">
+
+
+        <a href="quiz.html" class="result-button">
+
+            <span class="button-icon">
+                🔄
+            </span>
+
+            <span>
+                Retake Quiz
+            </span>
+
+        </a>
+
+
+
+        <a href="dashboard.html" class="result-button">
+
+            <span class="button-icon">
+                📚
+            </span>
+
+            <span>
+                Back to Learning
+            </span>
+
+        </a>
+
+
+
+        <a href="index.html" class="result-button">
+
+            <span class="button-icon">
+                🏠
+            </span>
+
+            <span>
+                Go to Home
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- GOOGLE TRANSLATE -->
+<!-- ========================= -->
+
+<div id="google_translate_element">
+</div>
+
+
+<script type="text/javascript">
+
+function googleTranslateElementInit() {
+
+    new google.translate.TranslateElement(
+        {pageLanguage: 'en'},
+        'google_translate_element'
+    );
+
+}
+
+</script>
+
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+
+
+<!-- ========================= -->
+<!-- RESULT SCRIPT -->
+<!-- ========================= -->
+
+<script>
+
+let score = localStorage.getItem("score");
+
+
+if(score === null)
+{
+    score = 0;
+}
+
+
+document.getElementById("score").innerHTML =
+    score + " / 10";
+
+
+let level = "";
+let feedback = "";
+
+
+if(score >= 8)
+{
+
+    level = "🟢 Cyber Smart";
+
+    feedback =
+        "Excellent! You have a good understanding of cyber safety.";
+
+}
+else if(score >= 5)
+{
+
+    level = "🟡 Intermediate";
+
+    feedback =
+        "Good job! Review some cyber safety practices and try again.";
+
+}
+else
+{
+
+    level = "🔴 Beginner";
+
+    feedback =
+        "Keep learning! Go through the learning modules again and improve your score.";
+
+}
+
+
+document.getElementById("level").innerHTML =
+    level;
+
+
+document.getElementById("feedback").innerHTML =
+    feedback;
+
+</script>
+
+
+</body>
+
+</html>

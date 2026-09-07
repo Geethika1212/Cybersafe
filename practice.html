@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<title>Cyber Security Practice Session</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f7fc;
+    margin:0;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+}
+
+.container{
+    width:500px;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.15);
+}
+
+h1,h2{
+    text-align:center;
+    color:#1e3a8a;
+}
+
+p{
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+#strength{
+    text-align:center;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+#otpResult{
+    text-align:center;
+    font-weight:bold;
+}
+
+.tips{
+    background:#eef4ff;
+    padding:12px;
+    border-radius:8px;
+    margin-top:15px;
+}
+
+.otp-box{
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:#2563eb;
+    background:#eef4ff;
+    padding:15px;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+hr{
+    margin:30px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<form action="PracticeServlet" method="post">
+
+<div class="container">
+
+<h1>Cyber Security Practice Session</h1>
+
+<!-- PASSWORD PRACTICE -->
+
+<h2>Password Practice</h2>
+
+<p>Create a strong password.</p>
+
+<input type="password"
+    id="password"
+    placeholder="Enter Password">
+
+<div id="strength"></div>
+
+<div class="tips">
+
+<h3>Password Tips</h3>
+
+<ul>
+<li>Use at least 8 characters</li>
+<li>Use uppercase letters (A-Z)</li>
+<li>Use lowercase letters (a-z)</li>
+<li>Use numbers (0-9)</li>
+<li>Use symbols (@,#,$,%)</li>
+</ul>
+
+</div>
+
+<button type="button"
+        id="otpButton"
+        onclick="showOTPSection()"
+        style="display:none;">
+    Proceed to OTP Practice
+</button>
+
+<hr>
+
+<!-- OTP PRACTICE -->
+
+<div id="otpSection">
+
+<h2>OTP Practice</h2>
+
+<p>Enter the OTP shown below.</p>
+
+<div class="otp-box" id="generatedOTP"></div>
+
+<input type="text"
+    id="userOTP"
+    placeholder="Enter OTP">
+
+<button type="button" onclick="verifyOTP()">
+    Verify OTP
+</button>
+<p id="otpResult"></p>
+
+<div class="tips">
+
+<h3>OTP Safety Tip</h3>
+
+<p>
+Never share OTP with anyone.
+Banks never ask for OTPs.
+</p>
+
+</div>
+
+</div>
+<input type="hidden"
+       id="practiceCompleted"
+       name="practiceCompleted">
+<button type="button" onclick="continueLearning()">
+    Continue Learning
+</button>
+
+</div>
+</form>
+
+<script>
+
+let isStrongPassword = false;
+let isOtpVerified = false;
+
+/* PASSWORD CHECK */
+
+let passwordField =
+document.getElementById("password");
+
+let strength =
+document.getElementById("strength");
+
+passwordField.addEventListener("input", function(){
+
+    let pass = passwordField.value;
+
+    let hasUpper = /[A-Z]/.test(pass);
+    let hasLower = /[a-z]/.test(pass);
+    let hasNumber = /[0-9]/.test(pass);
+    let hasSymbol = /[^A-Za-z0-9]/.test(pass);
+
+    if(pass.length < 8)
+    {
+        strength.innerHTML =
+        "Weak Password ❌";
+
+        strength.style.color =
+        "red";
+
+        isStrongPassword = false;
+
+        document.getElementById("otpButton").style.display =
+        "none";
+    }
+
+    else if(
+        hasUpper &&
+        hasLower &&
+        hasNumber &&
+        hasSymbol
+    )
+    {
+        strength.innerHTML =
+        "Strong Password ✅";
+
+        strength.style.color =
+        "green";
+
+        isStrongPassword = true;
+
+        document.getElementById("otpButton").style.display =
+        "block";
+    }
+
+    else
+    {
+        strength.innerHTML =
+        "Medium Password ⚠️";
+
+        strength.style.color =
+        "orange";
+
+        isStrongPassword = false;
+
+        document.getElementById("otpButton").style.display =
+        "none";
+    }
+
+});
+
+/* OTP GENERATION */
+
+let generatedOTP =
+Math.floor(100000 + Math.random() * 900000);
+
+document.getElementById("generatedOTP").innerHTML =
+generatedOTP;
+
+/* SCROLL TO OTP */
+
+function showOTPSection()
+{
+    document.getElementById("otpSection")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+/* VERIFY OTP */
+
+function verifyOTP()
+{
+    let enteredOTP =
+    document.getElementById("userOTP").value;
+
+    let result =
+    document.getElementById("otpResult");
+
+    if(enteredOTP == generatedOTP)
+    {
+        result.innerHTML =
+        "Correct OTP ✅";
+
+        result.style.color =
+        "green";
+
+        isOtpVerified = true;
+    }
+    else
+    {
+        result.innerHTML =
+        "Wrong OTP ❌";
+
+        result.style.color =
+        "red";
+
+        isOtpVerified = false;
+    }
+}
+
+/* CONTINUE */
+
+function continueLearning()
+{
+    if(!isStrongPassword)
+    {
+        alert("Please create a Strong Password first!");
+        return;
+    }
+
+    if(!isOtpVerified)
+    {
+        alert("Please verify the OTP first!");
+        return;
+    }
+
+    document.getElementById("practiceCompleted").value = "Yes";
+
+    console.log("Submitting Form...");
+    console.log(document.getElementById("practiceCompleted").value);
+
+    document.getElementById("practiceCompleted").form.submit();
+}
+
+</script>
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage:'en'},
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
+
+

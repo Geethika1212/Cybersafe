@@ -1,0 +1,741 @@
+/* ================================================= */
+/* GLOBAL */
+/* ================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    text-align: center;
+}
+
+
+
+/* ================================================= */
+/* HEADER */
+/* ================================================= */
+
+header {
+    background: #0b3d91;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+/* ================================================= */
+/* HERO SECTION */
+/* ================================================= */
+
+.hero {
+    padding: 40px;
+}
+
+
+
+/* ================================================= */
+/* NORMAL BUTTONS */
+/* ================================================= */
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0b3d91;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+button:hover {
+    background: #072d6b;
+}
+
+
+
+/* ================================================= */
+/* CARDS */
+/* ================================================= */
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+
+/* ================================================= */
+/* STATS */
+/* ================================================= */
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+/* ================================================= */
+/* LOGIN */
+/* ================================================= */
+
+.login-box {
+    width: 420px;
+    background: white;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+.login-box h2 {
+    color: #0b3d91;
+    margin-bottom: 10px;
+}
+
+
+.login-text {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+
+input:focus {
+    outline: none;
+    border: 2px solid #0b3d91;
+}
+
+
+
+/* ================================================= */
+/* MODULES */
+/* ================================================= */
+
+.module {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+
+
+/* ================================================= */
+/* PROGRESS */
+/* ================================================= */
+
+.progress {
+    width: 80%;
+    height: 30px;
+    background: #ddd;
+    margin: auto;
+    border-radius: 20px;
+}
+
+
+#bar {
+    width: 0%;
+    height: 30px;
+    background: green;
+    border-radius: 20px;
+}
+
+
+
+/* ================================================= */
+/* GOOGLE TRANSLATOR */
+/* ================================================= */
+
+#google_translate_element {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.goog-te-gadget {
+    font-size: 14px;
+}
+
+
+
+/* ================================================= */
+/* SCAM DETECTION SECTION */
+/* ================================================= */
+
+.detector-section {
+    background: #fff7f7;
+    border: 2px solid #ef4444;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+
+.detector-section h2 {
+    color: #b91c1c;
+    margin-bottom: 10px;
+}
+
+
+.detector-section > p {
+    color: #444;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+
+/* ================================================= */
+/* CHECK NOW BUTTON */
+/* ================================================= */
+
+.check-now-button {
+    width: auto;
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+.check-now-button:hover {
+    background: #b91c1c;
+    transform: scale(1.03);
+}
+
+
+
+/* ================================================= */
+/* DETECTOR OPTIONS */
+/* ================================================= */
+
+.detector-options {
+    display: none;
+    margin-top: 30px;
+}
+
+
+.detector-options > h3 {
+    text-align: center;
+    color: #0b3d91;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+
+
+/* ================================================= */
+/* TWO DETECTOR CARDS */
+/* ================================================= */
+
+.detector-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.detector-card {
+    background: white;
+    width: 280px;
+    padding: 22px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+
+.detector-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+.detector-card h3 {
+    color: #0b3d91;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+
+.detector-card p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+
+
+/* ================================================= */
+/* MESSAGE DETECTOR BUTTON */
+/* ================================================= */
+
+.message-button {
+    width: auto;
+    background: #0b3d91;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.message-button:hover {
+    background: #072d6b;
+}
+
+
+
+/* ================================================= */
+/* LINK DETECTOR BUTTON */
+/* ================================================= */
+
+.link-button {
+    width: auto;
+    background: #0b3d91;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.link-button:hover {
+    background: #072d6b;
+}
+
+
+
+/* ================================================= */
+/* MOBILE RESPONSIVE */
+/* ================================================= */
+
+@media(max-width: 600px) {
+
+    .login-box {
+        width: 90%;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 25px 15px;
+    }
+
+    .detector-section {
+        width: 95%;
+        padding: 20px 15px;
+    }
+
+    .detector-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detector-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+}
+
+
+
+/* ================================================= */
+/* ================================================= */
+/*                  RESULT PAGE                     */
+/* ================================================= */
+/* ================================================= */
+
+
+/* Main result card */
+
+.result-box {
+
+    width: 600px;
+
+    max-width: 90%;
+
+    background: white;
+
+    margin: 45px auto;
+
+    padding: 40px 45px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.12);
+
+}
+
+
+
+/* ================================================= */
+/* TROPHY */
+/* ================================================= */
+
+.result-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* ================================================= */
+/* RESULT HEADING */
+/* ================================================= */
+
+.result-box h2 {
+
+    color: #0b3d91;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* ================================================= */
+/* RESULT MESSAGE */
+/* ================================================= */
+
+.result-message {
+
+    color: #666;
+
+    font-size: 16px;
+
+    margin-bottom: 28px;
+
+}
+
+
+
+/* ================================================= */
+/* SCORE CARD */
+/* ================================================= */
+
+.score-card {
+
+    background: #f4f6f9;
+
+    border: 1px solid #dce3ec;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    margin: 20px 0 25px;
+
+}
+
+
+.score-title {
+
+    color: #777;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+
+}
+
+
+#score {
+
+    color: #0b3d91;
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+}
+
+
+
+/* ================================================= */
+/* RESULT LEVEL */
+/* ================================================= */
+
+.result-level {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+
+}
+
+
+
+/* ================================================= */
+/* FEEDBACK */
+/* ================================================= */
+
+.feedback {
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+/* ================================================= */
+/* RESULT NAVIGATION */
+/* ================================================= */
+
+.result-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 15px;
+
+    margin-top: 10px;
+
+}
+
+
+
+/* ================================================= */
+/* MEDIUM RESULT BUTTON */
+/* ================================================= */
+
+.result-button {
+
+    width: 155px;
+
+    min-height: 90px;
+
+    background: white;
+
+    border: 2px solid #dce3ec;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    color: #0b3d91;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 12px 8px;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.08);
+
+    transition: 0.25s;
+
+}
+
+
+
+/* ================================================= */
+/* BUTTON ICON */
+/* ================================================= */
+
+.button-icon {
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+/* ================================================= */
+/* BUTTON HOVER */
+/* ================================================= */
+
+.result-button:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #0b3d91;
+
+    background: #f5f8ff;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.12);
+
+}
+
+
+
+/* ================================================= */
+/* INDIVIDUAL BUTTON COLORS */
+/* ================================================= */
+
+.result-button:nth-child(1) {
+
+    border-top: 4px solid #2563eb;
+
+}
+
+
+.result-button:nth-child(2) {
+
+    border-top: 4px solid #16a34a;
+
+}
+
+
+.result-button:nth-child(3) {
+
+    border-top: 4px solid #f59e0b;
+
+}
+
+
+
+/* ================================================= */
+/* GOOGLE TRANSLATE RESULT PAGE */
+/* ================================================= */
+
+.result-box + #google_translate_element {
+
+    margin-top: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+/* ================================================= */
+/* RESULT PAGE MOBILE */
+/* ================================================= */
+
+@media(max-width: 600px) {
+
+    .result-box {
+
+        width: 92%;
+
+        padding: 30px 20px;
+
+        margin: 30px auto;
+
+    }
+
+
+    .result-box h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    #score {
+
+        font-size: 34px;
+
+    }
+
+
+    .result-buttons {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+
+    }
+
+
+    .result-button {
+
+        width: 85%;
+
+        max-width: 280px;
+
+        min-height: 75px;
+
+        flex-direction: row;
+
+        gap: 12px;
+
+    }
+
+
+    .button-icon {
+
+        margin-bottom: 0;
+
+        font-size: 25px;
+
+    }
+
+}

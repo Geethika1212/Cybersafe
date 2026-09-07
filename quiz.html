@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Safety Quiz</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f4f7fc;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.quiz-container{
+    background:white;
+    width:100%;
+    max-width:700px;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+h1{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:25px;
+}
+
+.question{
+    margin-bottom:25px;
+}
+
+.question p{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:12px;
+    color:#333;
+}
+
+label{
+    display:block;
+    margin:10px 0;
+    font-size:16px;
+    cursor:pointer;
+    color:#444;
+}
+
+input[type="radio"]{
+    margin-right:10px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#0d47a1;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#1565c0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+    <h1>Cyber Safety Quiz</h1>
+
+    <form id="quizForm"
+      action="QuizServlet"
+      method="post">
+
+        <div class="question">
+            <p>1. Someone asks for an OTP claiming to be SBI.</p>
+
+            <label>
+                <input type="radio" name="q1" value="0">
+                Share OTP
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="1">
+                Do Not Share OTP
+            </label>
+        </div>
+
+        <div class="question">
+            <p>2. www.sbi-secure-login.xyz</p>
+
+            <label>
+                <input type="radio" name="q2" value="0">
+                Safe
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="1">
+                Scam
+            </label>
+        </div>
+
+        <div class="question">
+            <p>3. Which is a strong password?</p>
+
+            <label>
+                <input type="radio" name="q3" value="0">
+                123456
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="1">
+                Cyber@Safe2025
+            </label>
+        </div>
+
+        <div class="question">
+            <p>4. HTTPS means?</p>
+
+            <label>
+                <input type="radio" name="q4" value="1">
+                Secure Connection
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="0">
+                Virus
+            </label>
+            <div class="question">
+    <p>5. What should you do if you receive a suspicious email?</p>
+
+    <label>
+        <input type="radio" name="q5" value="1">
+        Delete or Report It
+    </label>
+
+    <label>
+        <input type="radio" name="q5" value="0">
+        Click All Links
+    </label>
+</div>
+
+<div class="question">
+    <p>6. Is it safe to use public Wi-Fi for banking?</p>
+
+    <label>
+        <input type="radio" name="q6" value="0">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="q6" value="1">
+        No
+    </label>
+</div>
+
+<div class="question">
+    <p>7. What should you do before downloading an app?</p>
+
+    <label>
+        <input type="radio" name="q7" value="1">
+        Check Reviews and Source
+    </label>
+
+    <label>
+        <input type="radio" name="q7" value="0">
+        Download Immediately
+    </label>
+</div>
+
+<div class="question">
+    <p>8. Which one is safer?</p>
+
+    <label>
+        <input type="radio" name="q8" value="1">
+        Two-Factor Authentication
+    </label>
+
+    <label>
+        <input type="radio" name="q8" value="0">
+        Password Only
+    </label>
+</div>
+
+<div class="question">
+    <p>9. Should you share your ATM PIN?</p>
+
+    <label>
+        <input type="radio" name="q9" value="0">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="q9" value="1">
+        No
+    </label>
+</div>
+
+<div class="question">
+    <p>10. What is phishing?</p>
+
+    <label>
+        <input type="radio" name="q10" value="1">
+        A Scam to Steal Information
+    </label>
+
+    <label>
+        <input type="radio" name="q10" value="0">
+        A Type of Antivirus
+    </label>
+</div>
+        </div>
+<input type="hidden"
+       id="score"
+       name="score">
+
+<input type="hidden"
+       id="total"
+       name="total">
+
+<input type="hidden"
+       id="level"
+       name="level">
+       
+        <button type="button" onclick="submitQuiz()">
+            Submit Quiz
+        </button>
+
+    </form>
+
+</div>
+
+<script src="script.js"></script>
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'en'},
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+</body>
+</html>

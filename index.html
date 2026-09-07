@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Safe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Cyber Safe - Online Scam Awareness Portal</h1>
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <h2>Stay Safe Online</h2>
+
+    <p>
+        Learn about phishing attacks, OTP scams,
+        password security and safe online practices.
+    </p>
+
+
+    <!-- SCAM DETECTION -->
+
+    <div class="detector-section">
+
+        <h2>🚨 Need to Check Something?</h2>
+
+        <p>
+            Received a suspicious message or link?
+            Check it before you click or respond.
+        </p>
+
+        <!-- MAIN CHECK NOW BUTTON -->
+
+        <button
+            type="button"
+            class="check-now-button"
+            onclick="showDetectors()">
+
+            🔍 Check Now
+
+        </button>
+
+
+        <!-- DETECTOR OPTIONS - HIDDEN INITIALLY -->
+
+        <div id="detectorOptions" class="detector-options">
+
+            <h3>What would you like to check?</h3>
+
+
+            <div class="detector-container">
+
+
+                <!-- MESSAGE DETECTOR -->
+
+                <div class="detector-card">
+
+                    <div class="detector-icon">
+                        📩
+                    </div>
+
+                    <h3>Suspicious Message?</h3>
+
+                    <p>
+                        Check whether an SMS or message
+                        may be a scam.
+                    </p>
+
+                    <a
+                        href="https://scam-messages-detector-76atcyjhknjxeak8uz5ayq.streamlit.app/"
+                        target="_blank">
+
+                        <button
+                            type="button"
+                            class="message-button">
+
+                            Check Message
+
+                        </button>
+
+                    </a>
+
+                </div>
+
+
+                <!-- LINK DETECTOR -->
+
+                <div class="detector-card">
+
+                    <div class="detector-icon">
+                        🔗
+                    </div>
+
+                    <h3>Suspicious Link?</h3>
+
+                    <p>
+                        Check whether a website link
+                        may be unsafe or phishing.
+                    </p>
+
+                    <a
+                        href="https://cybersafe-phishing-link-detector-5uykczbdxvemijkpqndj6m.streamlit.app/"
+                        target="_blank">
+
+                        <button
+                            type="button"
+                            class="link-button">
+
+                            Check Link
+
+                        </button>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- START LEARNING -->
+
+    <a href="login.html">
+
+        <button type="button">
+            📚 Start Learning
+        </button>
+
+    </a>
+
+</section>
+
+
+
+<!-- STATS SECTION -->
+
+<section class="stats">
+
+    <div class="card">
+
+        <h3>80%</h3>
+
+        <p>
+            Phishing attacks happen through emails.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Thousands</h3>
+
+        <p>
+            Lose money due to OTP scams every year.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>UPI Fraud</h3>
+
+        <p>
+            Cases are increasing rapidly.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- CYBER CRIME HELPLINE -->
+
+<section class="helpline">
+
+    <h2>Cyber Crime Helpline</h2>
+
+    <h1>1930</h1>
+
+    <p>
+        If you have lost money or become a victim of
+        cyber fraud, contact the cyber crime helpline.
+    </p>
+
+</section>
+
+
+
+<!-- GOOGLE TRANSLATE -->
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+
+function googleTranslateElementInit() {
+
+    new google.translate.TranslateElement(
+        {pageLanguage: 'en'},
+        'google_translate_element'
+    );
+
+}
+
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+
+
+<!-- SCAM DETECTOR JAVASCRIPT -->
+
+<script>
+
+function showDetectors() {
+
+    let options = document.getElementById("detectorOptions");
+
+    if (options.style.display === "block") {
+
+        options.style.display = "none";
+
+    } else {
+
+        options.style.display = "block";
+
+        options.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

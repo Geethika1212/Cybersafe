@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Cyber Safe - Online Scam Awareness Portal</h1>
+</header>
+
+<div class="login-box">
+
+    <h2>Continue Learning</h2>
+
+    <p class="login-text">
+        Please enter your Name and Mobile Number.
+    </p>
+
+    <form action="LoginServlet" method="post">
+
+        <input type="text"
+               name="name"
+               placeholder="Enter Your Name"
+               required>
+
+        <input type="tel"
+               name="mobile"
+               placeholder="Enter Mobile Number"
+               maxlength="10"
+               pattern="[0-9]{10}"
+               required>
+
+        <button type="submit">
+            Continue Learning
+        </button>
+
+    </form>
+
+</div>
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage:'en'},
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+</body>
+</html>

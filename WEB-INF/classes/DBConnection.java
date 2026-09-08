@@ -3,34 +3,41 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-    private static final String URL =
-        "jdbc:mysql://localhost:3306/cybersafe";
+    public static Connection getConnection() {
 
-    private static final String USER =
-        "root";
-
-    private static final String PASSWORD =
-    "Geethika@12";
-    
-
-    public static Connection getConnection()
-    {
         Connection con = null;
 
-        try
-        {
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
+            String host = System.getenv("MYSQLHOST");
+            String port = System.getenv("MYSQLPORT");
+            String database = System.getenv("MYSQLDATABASE");
+            String user = System.getenv("MYSQLUSER");
+            String password = System.getenv("MYSQLPASSWORD");
+
+            // If Railway variables are not available,
+            // use the local MySQL database.
+            if (host == null || host.isEmpty()) {
+
+                host = "localhost";
+                port = "3306";
+                database = "cybersafe";
+                user = "root";
+                password = "Geethika@12";
+            }
+
+            String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
+
             con = DriverManager.getConnection(
-                    URL,
-                    USER,
-                    PASSWORD);
+                    url,
+                    user,
+                    password
+            );
 
             System.out.println("Database Connected Successfully");
 
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -1,12 +1,9 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-
     public static Connection getConnection() {
-
-        Connection con = null;
-
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -16,31 +13,26 @@ public class DBConnection {
             String user = System.getenv("MYSQLUSER");
             String password = System.getenv("MYSQLPASSWORD");
 
-            // If Railway variables are not available,
-            // use the local MySQL database.
             if (host == null || host.isEmpty()) {
-
-                host = "localhost";
-                port = "3306";
-                database = "cybersafe";
-                user = "root";
-                password = "Geethika@12";
+                throw new IllegalStateException(
+                    "Database environment variables are missing."
+                );
             }
 
-            String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
+            String url = "jdbc:mysql://" + host + ":" + port + "/" 
+                    + database + "?sslMode=VERIFY_IDENTITY";
 
-            con = DriverManager.getConnection(
-                    url,
-                    user,
-                    password
+            Connection con = DriverManager.getConnection(
+                url, user, password
             );
 
             System.out.println("Database Connected Successfully");
+            return con;
 
         } catch (Exception e) {
+            System.err.println("Database connection failed: " + e.getMessage());
             e.printStackTrace();
+            return null;
         }
-
-        return con;
     }
 }
